@@ -1,0 +1,53 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# vscode
+.vscode/
+.VSCodeCounter
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# Since we use VoIP and CallKit, we need to include all the native code, but not builds
+ios/build/
+android/build/
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# artifacts
+artifacts/
+coverage/
+allure-results/
+allure-report/
+
+# Prebilt
+ios
+android
