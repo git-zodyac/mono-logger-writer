@@ -8,13 +8,13 @@ export default ({
   collectCoverage: true,
   coverageDirectory: "artifacts/coverage",
   collectCoverageFrom: [
-    "src/**/*.{ts,tsx}",
+    "src/**/*.ts",
     "!src/**/*.{d,types}.ts",
     "!src/**/types.ts",
     "!src/**/index.ts"
   ],
   transform: {
-    "^.+\\.[tj]sx?$": "@swc/jest"
+    "^.+\\.[tj]s$": "@swc/jest"
   },
   extensionsToTreatAsEsm: [
     ".ts"

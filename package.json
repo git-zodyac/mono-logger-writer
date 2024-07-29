@@ -1,6 +1,6 @@
 {
   "name": "@bebrasmell/mono-logger-writer",
-  "description": "A simple topic-based logger with side effects",
+  "description": "File writing extension for Mono-logger",
   "repository": "https://github.com/bebrasmell/mono-logger-writer.git",
   "author": "Zak <137602160+bebrasmell@users.noreply.github.com>",
   "version": "1.0.0",
