@@ -92,6 +92,11 @@ In this case, the __iterator__ will not have any effect.
 
 If you stop the app and run it again with all the same configuration, __iterator__ will be pointed to the __next of the last file number__. If you want to start from scratch, you can delete those files or change the `filename` function.
 
+### Daily rotation
+By setting `daily_rotation` to true, you can effortlessly make the __Writer__ create a new file every day. This is useful when you want to keep logs separated by days, not file size.
+
+Note: This will cancel __Size based rotation__ behavior.
+
 ## How to screw things up
 Common problems that can possibly happen fall into one (or more) of these categories:
 
