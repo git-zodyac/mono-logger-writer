@@ -35,7 +35,7 @@ export class WriterEffect extends MonoEffect {
       fs.accessSync(this.dir_path, fs.constants.W_OK);
 
       const meta = readMetaFile(this.dir_path);
-      this.next_iter = meta[1];
+      this.next_iter = meta[1] + 1;
       return;
     }
 

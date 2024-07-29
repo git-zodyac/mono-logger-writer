@@ -1,3 +1,4 @@
+import { CODES } from "@bebrasmell/mono-logger";
 import type { TFilenameGenerator, TRecordTransformer } from "./types";
 
 export const DEFAULT_FILENAME: TFilenameGenerator = (d, i) => {
@@ -12,7 +13,7 @@ export const DEFAULT_TRANSFORMER: TRecordTransformer = (ts, lvl, topics, ...args
     return c;
   }).join(" ");
 
-  return `${ts.toISOString()} [${lvl}] ${topics_str} ${content}`;
-  // return `${ts.toISOString()} [${CODES[lvl]}] ${topics_str} ${content}`;
+  // return `${ts.toISOString()} [${lvl}] ${topics_str} ${content}`;
+  return `${ts.toISOString()} [${CODES[lvl]}] ${topics_str} ${content}`;
 };
 

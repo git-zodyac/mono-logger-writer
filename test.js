@@ -2,8 +2,7 @@ import logger from "@bebrasmell/mono-logger";
 import { WriterEffect } from "./dist/index.js";
 
 const writer = new WriterEffect({
-  level: "verbose",
-  path: "logs/nested",
+  path: "logs",
 });
 const w_logger = logger.topic("writer", {
   effect: writer,
@@ -17,10 +16,10 @@ let records = 0;
 //   records++;
 // }
 
-const interval = setInterval(() => {
-  if (records > 10000) return clearInterval(interval);
+// const interval = setInterval(() => {
+//   if (records > 10000) return clearInterval(interval);
 
-  w_logger.debug(`This is record ${records} containing a longer, longer, longer string`);
-  if (records % 50 == 0) w_logger.warn(`This record is special: ${records}.`);
-  records++;
-});
+//   w_logger.debug(`This is record ${records} containing a longer, longer, longer string`);
+//   if (records % 50 == 0) w_logger.warn(`This record is special: ${records}.`);
+//   records++;
+// });
