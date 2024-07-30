@@ -3,7 +3,7 @@
   "description": "File writing extension for Mono-logger",
   "repository": "https://github.com/bebrasmell/mono-logger-writer.git",
   "author": "Zak <137602160+bebrasmell@users.noreply.github.com>",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": false,
   "license": "MIT",
   "keywords": [
