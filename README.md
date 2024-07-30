@@ -1,4 +1,8 @@
 # Writer for [Mono-logger](https://github.com/bebrasmell/mono-logger)
+![NPM Version](https://img.shields.io/npm/v/%40bebrasmell%2Fmono-logger-writer)
+![NPM Downloads](https://img.shields.io/npm/dw/%40bebrasmell%2Fmono-logger-writer)
+![npm bundle size](https://img.shields.io/bundlephobia/min/%40bebrasmell%2Fmono-logger-writer)
+![Test coverage](./badges/coverage.svg)
 
 Writer extension for [Mono-logger 1.5+](https://github.com/bebrasmell/mono-logger).
 Please refer to its documentation before jumping into configuring the __Writer__.
