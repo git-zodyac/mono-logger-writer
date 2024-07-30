@@ -12,8 +12,15 @@ const w_logger = logger.topic("writer", {
 w_logger.info("Hello, world");
 
 let records = 0;
-while (records < 100000) {
+const iters = 100_000;
+const break_at = Math.floor(Math.random() * iters);
+while (records < iters) {
   w_logger.debug(`This is record ${records} containing a longer, longer, longer string`);
+  if (records % 50 == 0) w_logger.warn(`This record is special: ${records}.`);
+  if (records == break_at) {
+    throw new Error(`Breaking at record ${records}`);
+  }
+
   records++;
 }
 

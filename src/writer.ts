@@ -17,6 +17,7 @@ export class WriterEffect extends MonoEffect {
   private current_file_size = 0;
   private next_iter = 0;
 
+  private _last_used_topics: string[] = [];
   constructor(config?: iWriterConfig) {
     super(
       (ts, lvl, topics, ...args) => this.executor.bind(this)(ts, lvl, topics, ...args),
@@ -30,6 +31,23 @@ export class WriterEffect extends MonoEffect {
     this.daily_rotate = config?.daily_rotation ?? false;
 
     this.setupFolder();
+
+    process.on("exit", () => this._emergency_close());
+    process.on("uncaughtException", (e) => this._emergency_close(e));
+    process.on("unhandledRejection", (e) => this._emergency_close(e));
+    process.on("error", (e) => this._emergency_close(e));
+  }
+
+  private _emergency_close(e?: unknown, reason?: string) {
+    if (e) {
+      console.error(e);
+      this.executor(new Date(), "error", this._last_used_topics, e);
+    }
+
+    return new Promise<unknown>((resolve) => {
+      if (!this.current_stream) return resolve(0);
+      this.current_stream?.close(resolve);
+    });
   }
 
   // Daily rotation
@@ -37,7 +55,15 @@ export class WriterEffect extends MonoEffect {
   private currentTimer?: NodeJS.Timeout;
   private setupDailyRotation() {
     const now = new Date();
-    const next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0, 0);
+    const next = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate() + 1,
+      0,
+      0,
+      0,
+      0,
+    );
     const diff = next.getTime() - now.getTime();
 
     this.currentTimer = setTimeout(() => {
@@ -101,7 +127,9 @@ export class WriterEffect extends MonoEffect {
       }
     }
 
-    this.current_stream = fs.createWriteStream(this.current_output_path);
+    this.current_stream = fs.createWriteStream(this.current_output_path, {
+      autoClose: true,
+    });
 
     writeMetaFile(this.dir_path, this.next_iter);
     this.next_iter++;
@@ -127,6 +155,8 @@ export class WriterEffect extends MonoEffect {
 
   // Effect
   private executor(ts: Date, level: LogLevel, topics: string[], ...args: any[]) {
+    this._last_used_topics = topics;
+
     const record = this.transformer(ts, level, topics, ...args);
     const content = `${record}\n`;
 
