@@ -99,9 +99,11 @@ test("Should return default value if date invalid", () => {
 });
 
 test("Should return correct values", () => {
-  const date = new Date().toISOString()
+  const date = new Date().toISOString();
   const rand = Math.floor(Math.random() * 10_000);
-  fs.readFileSync = jest.fn(() => `${date}\n${rand}`) as unknown as typeof fs.readFileSync;
+  fs.readFileSync = jest.fn(
+    () => `${date}\n${rand}`,
+  ) as unknown as typeof fs.readFileSync;
 
   const hash = genHash();
   const res = readMetaFile(hash);
@@ -109,4 +111,3 @@ test("Should return correct values", () => {
   expect(res[0].toISOString()).toBe(date);
   expect(res[1]).toBe(rand);
 });
-

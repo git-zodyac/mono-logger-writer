@@ -1,6 +1,6 @@
-import { type LogLevel, MonoEffect } from "@bebrasmell/mono-logger";
 import fs from "node:fs";
 import Path from "node:path";
+import { type LogLevel, MonoEffect } from "@bebrasmell/mono-logger";
 import { DEFAULT_FILENAME, DEFAULT_TRANSFORMER } from "./defaults";
 import type { TFilenameGenerator, TRecordTransformer, iWriterConfig } from "./types";
 import { readMetaFile, writeMetaFile } from "./utils";
@@ -37,7 +37,15 @@ export class WriterEffect extends MonoEffect {
   private currentTimer?: NodeJS.Timeout;
   private setupDailyRotation() {
     const now = new Date();
-    const next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0, 0);
+    const next = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate() + 1,
+      0,
+      0,
+      0,
+      0,
+    );
     const diff = next.getTime() - now.getTime();
 
     this.currentTimer = setTimeout(() => {

@@ -1,5 +1,5 @@
-import { MonoEffect } from "@bebrasmell/mono-logger";
 import fs from "node:fs";
+import { MonoEffect } from "@bebrasmell/mono-logger";
 import { genHash } from "./__hash";
 import { WriterEffect } from "./writer";
 
@@ -76,5 +76,4 @@ test("Should create new file when file is over max_file_size", () => {
   writer.apply(new Date(), "warn", []);
 
   expect(fs.createWriteStream).toHaveBeenCalledTimes(1);
-
 });
