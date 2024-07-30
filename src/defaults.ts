@@ -10,7 +10,8 @@ export const DEFAULT_TRANSFORMER: TRecordTransformer = (ts, lvl, topics, ...args
   const topics_str = topics.join(":");
   const content = args
     .map((c) => {
-      if (typeof c === "object") return JSON.stringify(c);
+      if (c instanceof Error) return c.stack;
+    if (typeof c === "object") return JSON.stringify(c);
       return c;
     })
     .join(" ");
