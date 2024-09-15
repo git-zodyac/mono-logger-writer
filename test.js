@@ -1,4 +1,4 @@
-import logger from "@bebrasmell/mono-logger";
+import logger from "@zodyac/mono-logger";
 import { WriterEffect } from "./dist/index.js";
 
 const writer = new WriterEffect({

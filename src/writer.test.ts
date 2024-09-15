@@ -1,5 +1,5 @@
+import { MonoEffect } from "@zodyac/mono-logger";
 import fs from "node:fs";
-import { MonoEffect } from "@bebrasmell/mono-logger";
 import { genHash } from "./__hash";
 import { WriterEffect } from "./writer";
 

@@ -1,4 +1,4 @@
-import type { LogLevel } from "@bebrasmell/mono-logger";
+import type { LogLevel } from "@zodyac/mono-logger";
 
 export type TFilenameGenerator = (date: Date, iterator: number) => string;
 export type TRecordTransformer = (

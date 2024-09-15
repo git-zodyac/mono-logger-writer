@@ -1,16 +1,16 @@
-# Writer for [Mono-logger](https://github.com/bebrasmell/mono-logger)
-![NPM Version](https://img.shields.io/npm/v/%40bebrasmell%2Fmono-logger-writer)
-![NPM Downloads](https://img.shields.io/npm/dw/%40bebrasmell%2Fmono-logger-writer)
-![npm bundle size](https://img.shields.io/bundlephobia/min/%40bebrasmell%2Fmono-logger-writer)
+# Writer for [Mono-logger](https://github.com/zodyac/mono-logger)
+![NPM Version](https://img.shields.io/npm/v/%40zodyac%2Fmono-logger-writer)
+![NPM Downloads](https://img.shields.io/npm/dw/%40zodyac%2Fmono-logger-writer)
+![npm bundle size](https://img.shields.io/bundlephobia/min/%40zodyac%2Fmono-logger-writer)
 ![Test coverage](./badges/coverage.svg)
 
-Writer extension for [Mono-logger 1.5+](https://github.com/bebrasmell/mono-logger).
+Writer extension for [Mono-logger 1.5+](https://github.com/zodyac/mono-logger).
 Please refer to its documentation before jumping into configuring the __Writer__.
 
 This effect allows you to write logs to a file with minimum configuration.
 ```ts
-import { Logger } from '@bebrasmell/mono-logger';
-import { WriterEffect } from '@bebrasmell/mono-logger-writer';
+import { Logger } from '@zodyac/mono-logger';
+import { WriterEffect } from '@zodyac/mono-logger-writer';
 
 const writerEffect = new WriterEffect({
   path: 'logs',
@@ -37,16 +37,16 @@ Please see [CHANGELOG](./CHANGELOG.md) for latest changes.
 - Mono-logger 1.5+
 
 ## Installation
-Assuming you have already installed [Mono-logger 1.5+](https://github.com/bebrasmell/mono-logger):
+Assuming you have already installed [Mono-logger 1.5+](https://github.com/zodyac/mono-logger):
 
 ```bash
-yarn add @bebrasmell/mono-logger-writer
+yarn add @zodyac/mono-logger-writer
 ```
 
 Or
 
 ```bash
-npm i @bebrasmell/mono-logger-writer
+npm i @zodyac/mono-logger-writer
 ```
 
 ## Configuration
@@ -62,8 +62,8 @@ npm i @bebrasmell/mono-logger-writer
 
 
 ```ts
-import { Logger, type LogLevel } from '@bebrasmell/mono-logger';
-import { WriterEffect } from '@bebrasmell/mono-logger-writer';
+import { Logger, type LogLevel } from '@zodyac/mono-logger';
+import { WriterEffect } from '@zodyac/mono-logger-writer';
 
 const transformer = (ts: Date, level: LogLevel, topics: string[], ...messages: any[]) => {
   const timestamp = ts.toString();
@@ -121,7 +121,7 @@ These are several points of special interest:
 - Edge case exploration;
 - Stability and efficiency improvements (KISS);
 
-You are also welcome to extend and improve [Mono-logger](https://github.com/bebrasmell/mono-logger) plugin ecosystem.
+You are also welcome to extend and improve [Mono-logger](https://github.com/zodyac/mono-logger) plugin ecosystem.
 
 ## License
 MIT

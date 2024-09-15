@@ -1,32 +1,22 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
-
-    "rootDir": "./src",
-    "module": "ESNext",
+    "rootDir": "src",
+    "module": "ES2022",
     "target": "ES2022",
-    "lib": ["es2022"],
     "moduleResolution": "node",
     "baseUrl": "./src",
     "declaration": true,
     "sourceMap": true,
-    "outDir": "build",
-    "removeComments": true,
+    "outDir": "dist",
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "noImplicitAny": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "paths": {},
   },
-  "include": ["src/**/*", "test.js"],
+  // "include": ["src/**/*"],
   "exclude": [
-    "dist/**/*",
-    "node_modules/**/*",
-    "**/*.(spec|test).ts",
-    "**/__mocks__/**/*",
+    "dist",
+    "tsup.config.ts",
+    "node_modules",
   ]
 }

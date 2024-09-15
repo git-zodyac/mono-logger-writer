@@ -1,4 +1,4 @@
-import { CODES } from "@bebrasmell/mono-logger";
+import { CODES } from "@zodyac/mono-logger";
 import type { TFilenameGenerator, TRecordTransformer } from "./types";
 
 export const DEFAULT_FILENAME: TFilenameGenerator = (d, i) => {

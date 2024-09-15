@@ -268,11 +268,6 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bebrasmell/mono-logger@^1.5.4":
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/@bebrasmell/mono-logger/-/mono-logger-1.5.4.tgz#9cfe8dcbeda26aff4727d34f238a5061553c2dec"
-  integrity sha512-NETm/XgvOh1BaogKGY07g/f+8AoZUYg7OlgUSd+L8T4thGwihlu1TWQgmp0H/RBKd3T/QxKD5CpMRYXgsuK0VQ==
-
 "@biomejs/biome@^1.8.3":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@biomejs/biome/-/biome-1.8.3.tgz#3b5eecea90d973f71618aae3e6e8be4d2ca23e42"
@@ -1016,6 +1011,11 @@
   integrity sha512-xQ67Yc/laOG5uMfX/093MRlGGCIBzZMarVa+gfNKJxWAIgykYpVGkBdbqEzGDDfCrVUj6Hiff4mTZ5BA6TmAog==
   dependencies:
     "@types/yargs-parser" "*"
+
+"@zodyac/mono-logger@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@zodyac/mono-logger/-/mono-logger-2.0.0.tgz#bbab92dd11caf4f2e2f3c0227b66386629176089"
+  integrity sha512-6C5dsAEbNOPeFwd96OWT7esCd9VzDR0Mx0HMcR5Fao+vx306OQ9/ZigC9FR9WnYx/beM1ORwU+58LsfDjS0Zxg==
 
 ansi-escapes@^4.2.1:
   version "4.3.2"

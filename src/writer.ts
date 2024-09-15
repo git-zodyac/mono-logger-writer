@@ -1,6 +1,6 @@
+import { type LogLevel, MonoEffect } from "@zodyac/mono-logger";
 import fs from "node:fs";
 import Path from "node:path";
-import { type LogLevel, MonoEffect } from "@bebrasmell/mono-logger";
 import { DEFAULT_FILENAME, DEFAULT_TRANSFORMER } from "./defaults";
 import type { TFilenameGenerator, TRecordTransformer, iWriterConfig } from "./types";
 import { readMetaFile, writeMetaFile } from "./utils";
